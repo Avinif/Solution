@@ -39,7 +39,7 @@ describe('Cart Page Test Suite', () => {
 
   it('Add products to cart', () => {
     cy.AddProductsToCart(productId, numberOfProducts);
-    mainPage.AssertAuantityOfItemsInCart(numberOfProducts);
+    mainPage.AssertTheQuantityOfItemsInTheCart(numberOfProducts);
   })
 
   it('Add products to cart', () => {
