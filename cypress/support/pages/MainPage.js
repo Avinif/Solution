@@ -8,7 +8,7 @@ class MainPage {
       cy.getByDataTest(`remove-${productname}`).should('exist');
     }
 
-    AssertAuantityOfItemsInCart(number) {
+    AssertTheQuantityOfItemsInTheCart(number) {
       cy.getByDataTest('shopping-cart-badge').should('contain', number);
     }
 

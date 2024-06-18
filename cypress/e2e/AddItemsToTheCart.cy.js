@@ -4,11 +4,11 @@ import { mainPage } from '../support/pages/MainPage';
 import { cartPage } from '../support/pages/CartPage';
 
 describe('Cart Page Test Suite', () => {
-  const Username = 'standard_user';
-  const firstName = 'user';
-  const lastName = 'user';
+  const username = 'standard_user';
+  const firstname = 'user';
+  const lastname = 'user';
   const postalCode = '780000';
-  const Password = 'secret_sauce';
+  const password = 'secret_sauce';
   const productId = [
     'sauce-labs-backpack',
     'sauce-labs-bike-light',
@@ -17,7 +17,7 @@ describe('Cart Page Test Suite', () => {
     'sauce-labs-onesie',
     'sauce-test.allthethings()-t-shirt-(red)'
   ];
-  const productname = [
+  const productName = [
     'Sauce Labs Backpack',
     'Sauce Labs Bike Light',
     'Sauce Labs Bolt T-Shirt',
@@ -34,7 +34,7 @@ describe('Cart Page Test Suite', () => {
   ]
 
   beforeEach(() => {
-    cy.Login(Username, Password);
+    cy.Login(username, password);
   });
 
   it('Add products to cart', () => {
@@ -44,16 +44,16 @@ describe('Cart Page Test Suite', () => {
 
   it('Add products to cart', () => {
     cy.AddProductsToCart(productId, numberOfProducts);
-    mainPage.AssertAuantityOfItemsInCart(numberOfProducts);
+    mainPage.AssertTheQuantityOfItemsInTheCart(numberOfProducts);
     mainPage.VisitCart();
-    cy.AssertProductsInCart(productname, numberOfProducts);
+    cy.AssertProductsInCart(productName, numberOfProducts);
   })
 
   it('Proceeding to checkout', () => {
     cy.AddProductsToCart(productId, numberOfProducts);
     mainPage.VisitCart();
     cartPage.ClickCheckoutBtn();
-    cartPage.AssertFilledUserDataByDefault(firstName, lastName, postalCode);
+    cartPage.AssertFilledUserDataByDefault(firstname, lastname, postalCode);
   })
 
   it('Making the checkout', () => {
