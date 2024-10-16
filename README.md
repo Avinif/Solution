@@ -13,7 +13,7 @@ How to download a repository to your local machine from GitHub:
 
 How to run tests:
 1. install npm: command "npm i",
-2. install cypress: command "npm install cypress@9 --save-dev",
+2. install cypress: command "npm install cypress --save-dev",
 3. run cypress: command "npx cypress open",
 4. select E2E Testing in the open window,
 5. select a browser convenient for running tests,
